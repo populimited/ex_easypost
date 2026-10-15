@@ -5,7 +5,7 @@ defmodule EasyPost.MixProject do
     [
       app: :ex_easypost,
       version: "3.0.4",
-      elixir: "~> 1.11",
+      elixir: "~> 1.20",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       dialyzer: dialyzer(),
@@ -21,23 +21,17 @@ defmodule EasyPost.MixProject do
 
   defp deps do
     [
-      { :hackney, "~> 1.15", optional: true },
-
-      { :jason, "~> 1.2", optional: true },
-
       #
       # dev
       #
 
-      { :dialyxir, "~> 1.0", only: :dev, runtime: false },
-
-      { :ex_doc, ">= 0.0.0", only: :dev, runtime: false }
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:req, "~> 0.7"}
     ]
   end
 
   defp dialyzer do
     [
-      plt_add_apps: [:hackney],
       plt_core_path: "_build/#{Mix.env()}"
     ]
   end

@@ -15,7 +15,7 @@ defmodule EasyPost.Config do
 
   defstruct api_key: nil,
             host: "api.easypost.com",
-            http_client: EasyPost.HTTP.Hackney,
+            http_client: EasyPost.HTTP.ReqAdapter,
             http_client_opts: [],
             json_codec: Jason,
             path: "/v2",
